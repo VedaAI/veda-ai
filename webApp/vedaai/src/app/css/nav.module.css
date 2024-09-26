@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+
+.top{
+    position: absolute;
+    top: 0;
+    padding: 10px;
+}
+
+
