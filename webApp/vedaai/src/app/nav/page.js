@@ -1,17 +1,28 @@
-import styles from '../css/nav.module.css'
+import stylesNav from '../css/nav.module.css'
 
 
-export default function nav(){
+export default function Nav(){
 
     return(
-        <div className = {styles.flex}>
-            <div className={styles.top}>
+        <div className = {stylesNav.flex}>
+            <div className={stylesNav.top}>
                 <img src="" alt="logo"></img>
             </div>
-            <div>
+            <div className={stylesNav.centereText}>
+
+            <div className={stylesNav.box} >
+                <h2> Agrim Kulshreshtha </h2>
+                <h3> agrim@gmail.com </h3>
+            </div>
+            <div className={stylesNav.history}>
+                <h5>history
+
+                </h5>
+            </div>
+
 
             </div>
-            <div className={styles.bottom}>
+            <div className={stylesNav.bottom}>
                 <h1> LOGOUT </h1>
             </div>
         </div>

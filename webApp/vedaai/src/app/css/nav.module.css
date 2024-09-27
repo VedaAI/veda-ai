@@ -1,21 +1,47 @@
+
 .flex{
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content:space-between;
     align-items: center;
+    background: rgb(68, 255, 0);
+    height: 100vh;
+    color: black;
 }
 
-.bottom{
+
+
+/* .bottom{
     position: absolute;
     bottom: 0;
     padding: 20px;
-}
+} */
 
-.top{
-    position: absolute;
+/* .top{
+    position: relative;
     top: 0;
     padding: 10px;
+} */
+
+.centereText{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+
 }
 
 
+.box{
+    border: solid black 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.history{
+    padding-top: 20px ;
+}

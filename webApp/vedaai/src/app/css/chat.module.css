@@ -1,0 +1,25 @@
+.all{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background: white;
+
+}
+
+.chat{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items:flex-end;
+    padding: 10px;
+    padding-bottom:60px ;
+}
+
+.chat > input{
+    width: 80%;
+    background: grey;
+    border-radius:30px ;
+    height: 40px;
+
+    border: none;
+    padding: 10px;
+}
