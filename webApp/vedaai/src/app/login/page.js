@@ -9,11 +9,24 @@ export default function Login(){
     const [getName , setName] = useState('');
     const [getEmail , setEmail ] = useState('');
 
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    }
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    }
+
+
+
+
+
 
 
 
 
     const handleButtonClick = async (e) => {
+        
 
     }
 
