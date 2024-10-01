@@ -5,21 +5,36 @@
 
 }
 
+.right{
+    display: grid;
+    grid-template-rows: 10% 90% ;
+    height: 100vh;
+    
+}
 .chat{
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items:flex-end;
-    padding: 10px;
-    padding-bottom:60px ;
+    align-items: flex-end;
 }
-
-.chat > input{
-    width: 80%;
-    background: grey;
-    border-radius:30px ;
-    height: 40px;
-
+.input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.input > button{
+    height: 30px;
+    width :30px;
+    margin: 0;
     border: none;
-    padding: 10px;
+    background: #315C2B;
 }
+.input > input{
+    width: 60%;
+    height: 30px;
+    margin: 0;
+    border: none;
+}
+
+
+

@@ -23,7 +23,7 @@ export default function Nav(){
 
             </div>
             <div className={stylesNav.bottom}>
-                <h1> LOGOUT </h1>
+                <h4> LOGOUT </h4>
             </div>
         </div>
     )

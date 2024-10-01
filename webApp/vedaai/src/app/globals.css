@@ -40,3 +40,18 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.all{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  background: white;
+
+}
+
+.right{
+  display: grid;
+  grid-template-rows: 10% 90% ;
+  height: 100vh;
+  
+}

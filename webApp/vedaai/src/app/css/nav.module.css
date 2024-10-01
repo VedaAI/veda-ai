@@ -1,13 +1,14 @@
 
 .flex{
+    padding: 20px 0 20px 0;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content:space-between;
     align-items: center;
-    background: rgb(68, 255, 0);
+    background: #131c15;
     height: 100vh;
-    color: black;
+    color: #9EA93F;
 }
 
 
@@ -37,7 +38,7 @@
 
 
 .box{
-    border: solid black 1px;
+    border: solid white 1px;
     border-radius: 10px;
     padding: 20px;
 }
