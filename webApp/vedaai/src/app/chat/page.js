@@ -1,6 +1,9 @@
+"use client"
+
 import Nav from "../nav/page22";
 import styleChat from '../css/chat.module.css';
 import Hnav from "../nav/page1";
+import { storeData , removeData, getData } from "../../../utlis/localstorage";
 
 
 export default function Chat(){
