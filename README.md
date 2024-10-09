@@ -1,3 +1,3 @@
 # VEDA-AI
 
-## An AI enabled chat-bot with its own knownledge graph made through iText2KG.
+## An AI enabled chat-bot giving context based answers through RAG
