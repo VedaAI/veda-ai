@@ -1,0 +1,42 @@
+.all{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background: white;
+
+}
+
+.right{
+    display: grid;
+    grid-template-rows: 10% 90% ;
+    height: 100vh;
+    
+}
+.chat{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 30px 30px 30px ;
+}
+.input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.input > button{
+    height: 30px;
+    width :30px;
+    margin: 0;
+    border: none;
+    background: #315C2B;
+}
+.input > input{
+    width: 60%;
+    height: 30px;
+    margin: 0;
+    border: none;
+}
+
+
+
