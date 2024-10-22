@@ -1,0 +1,154 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(90deg, #98FB98, #2E8B57);
+  } */
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+  }
+  
+  
+  .screen {
+    /* margin: 30px; */
+    background: linear-gradient(90deg, #32CD32, #228B22);
+    position: relative;
+    height: 540px;
+    width: 360px;
+    border:solid black 1px ;
+    /* box-shadow: 0px 0px 24px #000000; */
+  }
+  
+  .screenContent {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+  }
+  
+  .screenBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .screenBackgroundShape {
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  
+  .screenBackgroundShape1 {
+    height: 520px;
+    width: 520px;
+    background: #d5f6d2;
+    top: -50px;
+    right: 120px;
+    border-radius: 0 72px 0 0;
+  }
+  
+  .screenBackgroundShape2 {
+    height: 220px;
+    width: 220px;
+    background: #55b33c;
+    top: -172px;
+    right: 0;
+    border-radius: 32px;
+  }
+  
+  .screenBackgroundShape3 {
+    height: 540px;
+    width: 190px;
+    background: linear-gradient(270deg, #32CD32, #228B22);
+    top: -24px;
+    right: 0;
+    border-radius: 32px;
+  }
+  
+  .screenBackgroundShape4 {
+    height: 400px;
+    width: 200px;
+    background: #82df74;
+    top: 420px;
+    right: 50px;
+    border-radius: 60px;
+  }
+  
+  .login {
+    width: 320px;
+    padding: 30px;
+    padding-top: 156px;
+  }
+  
+  .loginField {
+    padding: 20px 0px;
+    position: relative;
+    color: #000000;
+  }
+  
+  .loginIcon {
+    position: absolute;
+    top: 30px;
+    color: #55b33c;
+  }
+  
+  .loginInput {
+    border: none;
+    border-bottom: 2px solid #98FB98;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    font-weight: 700;
+    width: 75%;
+    transition: .2s;
+    color: #000000;
+  }
+  
+  .loginInput:active,
+  .loginInput:focus,
+  .loginInput:hover {
+    outline: none;
+    border-bottom-color: #228B22;
+  }
+  
+  .loginSubmit {
+    background: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid #BDFCC9;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #55b33c;
+    box-shadow: 0px 2px 2px #55b33c;
+    cursor: pointer;
+    transition: .2s;
+  }
+  
+  .loginSubmit:active,
+  .loginSubmit:focus,
+  .loginSubmit:hover {
+    border-color: #228B22;
+    outline: none;
+  }
+  
+  .buttonIcon {
+    font-size: 24px;
+    margin-left: auto;
+    color: #55b33c;
+  }
+  

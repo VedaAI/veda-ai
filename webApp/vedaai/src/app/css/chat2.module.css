@@ -1,0 +1,86 @@
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    /* border: 1px solid #ccc; */
+    margin: 0 40px 0 40px;
+  }
+
+  .chatBox {
+    flex-grow: 1;
+    padding: 10px;
+    /* overflow-y: scroll;   */
+  }
+
+  .message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 60%;
+  }
+
+  .leftMessage {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    color: black;
+    text-align: left;
+    max-width: 60%;
+    word-wrap: break-word;  /* Break long words */
+    overflow-wrap: break-word; /* For handling word breaks */
+  }
+
+  .rightMessage {
+    /* background-color: #007bff; */
+  display: flex;
+  justify-content: flex-end;
+  text-align: right ;
+  }
+
+  .rightMessage > div {
+    background-color: #a2ec97;
+    width: fit-content;
+    color: black;
+  align-self: flex-end;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  
+  max-width: 60%;
+  word-wrap: break-word;  /* Break long words */
+  overflow-wrap: break-word; /* For handling word breaks */
+  
+  /* width: 100%; */
+
+  }
+
+  .inputBox {
+    display: flex;
+    padding: 10px;
+    /* border-top: 1px solid #ccc; */
+  }
+
+  .input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ccc ;
+    color: black;
+
+  }
+
+  .button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #46924c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

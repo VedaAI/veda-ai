@@ -6,9 +6,9 @@
     text-align: center;
     justify-content:space-between;
     align-items: center;
-    background: #131c15;
+    background: rgb(0, 42, 2);
     height: 100vh;
-    color: #9EA93F;
+    color: #c7d16d;
 }
 
 
@@ -19,11 +19,10 @@
     padding: 20px;
 } */
 
-/* .top{
-    position: relative;
-    top: 0;
-    padding: 10px;
-} */
+.top > h1 {
+    font-size: xxx-large;
+    
+}
 
 .centereText{
     display: flex;
@@ -33,6 +32,8 @@
     align-items: center;
     padding: 20px;
     height: 100%;
+    width: 100%;
+
 
 }
 
@@ -40,6 +41,9 @@
 .box{
     border: solid white 1px;
     border-radius: 10px;
+    width: 100%;
+    color: whitesmoke;
+   
     padding: 20px;
 }
 

@@ -5,6 +5,7 @@ import styleChat from '../css/chat.module.css';
 import Hnav from "../nav/page1";
 import { storeData , removeData, getData } from "../../../utlis/localstorage";
 
+import Chat2 from "../chat2/page";
 
 export default function Chat(){
 
@@ -20,13 +21,15 @@ export default function Chat(){
             <div className={styleChat.chat}>
 
 
-                <div className={styleChat.input}>
+                {/* <div className={styleChat.input}>
                 <input type="text" name="chat" />
                 <button>&gt;</button>
 
  
 
-                </div>
+                </div> */}
+
+                <Chat2 />
 
 
             </div>

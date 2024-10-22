@@ -1,7 +1,9 @@
 import pool from "../../../../utlis/pgdb";
 
-async function getData(username, name) {
-  const { rows } = await pool.query("SELECT * FROM userData WHERE UID = 'u1'");
+async function getData(username, password) {
+  const { rows } = await pool.query("SELECT * FROM userData WHERE UID = $1 and password = $2",[username,password]);
+  
+  
   return rows;
 }
 
@@ -9,11 +11,11 @@ async function getData(username, name) {
 export async function POST(req) {
   try {
     const body = await req.json(); // Parse the request body
-    const { username, name } = body;
+    const { username, password } = body;
 
   
 
-    const rows = await getData(username, name);
+    const rows = await getData(username, password);
    
 
     if (rows.length > 0) {

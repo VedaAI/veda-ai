@@ -4,19 +4,28 @@ import stylesNav from '../css/nav.module.css'
 import { storeData , removeData, getData } from "../../../utlis/localstorage";
 
 import { useState , useEffect } from 'react';
+import Link from 'next/link';
 
 
 export default function Nav(){
 
-    const [getUser , setUser ] = useState();
+    const [getUserData , setUserData ] = useState(null);
 
     useEffect(() => {
         console.log(getData("user"));
-        const x  = getData("user");
-        console.log("X" +x);
+        const userData  = getData("user");
+        setUserData(userData[0]);
+        // console.log("anrn")
+        // console.log(getUserData)
+     
         
         
     },[]);
+    useEffect(() => {
+        if (getUserData) {
+            console.log("Updated user data in state:", getUserData);
+        }
+    }, [getUserData]); 
 
 
 
@@ -29,14 +38,20 @@ export default function Nav(){
     return(
         <div className = {stylesNav.flex}>
             <div className={stylesNav.top}>
-                <img src="" alt="logo"></img>
+                {/* <img src="" alt="logo"></img> */}
+                <h1>VEDA AI </h1>
             </div>
+            <br></br>
+            <br></br>
             <div className={stylesNav.centereText}>
 
+
             <div className={stylesNav.box} >
-                <h2> </h2>
-                <h3> agrim@gmail.com </h3>
-            </div>
+                {/* Safely accessing the user data */}
+                <h2>{getUserData ? getUserData.uname || 'Unknown User' : 'Loading...'}</h2>
+                    <br />
+                    <h3>{getUserData ? getUserData.email || 'No Email Provided' : 'Loading...'}</h3>
+                </div>
             <div className={stylesNav.history}>
                 <h5>history
 
@@ -46,7 +61,7 @@ export default function Nav(){
 
             </div>
             <div className={stylesNav.bottom}>
-                <h4> LOGOUT </h4>
+                <Link href="./"> <h4> LOGOUT </h4></Link>
             </div>
         </div>
     )
