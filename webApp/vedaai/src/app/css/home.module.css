@@ -132,12 +132,14 @@ border: 1px solid rgba(255, 124, 0, 0.3); */
 }
 
 .loginButton{
-    width: 10rem;
-    padding: 1rem;
+    /* width: 10rem; */
+    /* padding: 1rem; */
     border: none;
-    background: black;
-    color: aliceblue;
-    border-radius: 0.5rem;
+
+    background: transparent;
+    color: black;
+    font-size: small;
+    
 
 }
 
@@ -154,9 +156,11 @@ border: 1px solid rgba(255, 124, 0, 0.3); */
 }
 
 .createSection{
-    /* text-align: center; */
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* display: grid; */
+    /* grid-template-columns: auto auto; */
     align-items: center;
     justify-items: center;
 }
@@ -164,6 +168,8 @@ border: 1px solid rgba(255, 124, 0, 0.3); */
 .createSectionGrid{
     display: grid;
     grid-template-columns: auto auto;
+    align-items: center;
+    justify-items: center;
 }
 
 .createSectionButton{
@@ -173,6 +179,7 @@ border: 1px solid rgba(255, 124, 0, 0.3); */
     background: #46924c;
     color: aliceblue;
     border-radius: 0.5rem;
+    margin: 0.5rem 0 0.5rem 0;
     
 
 }

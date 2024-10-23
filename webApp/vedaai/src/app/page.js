@@ -251,7 +251,7 @@ export default function Home() {
 
         <div className={isActiveCreate ? `${styles.createSection} ${styles.none}` : styles.createSection}>
 
-          {/* <div className={styles.createSectionGrid}> */}
+          <div className={styles.createSectionGrid}>
           
           {/*}
           <input className={styles.createSectionInput} type='text' onChange={handleUserChange} placeholder='User Id' /> */}
@@ -265,7 +265,7 @@ export default function Home() {
           <input className={styles.createSectionInput} type='text' onChange={handlePasswordChange} placeholder='Password' />
           <input className={styles.createSectionInput} type='text' placeholder='Confirm Password' />
 
-          {/* </div> */}
+          </div> 
           
           <button className={styles.createSectionButton} onClick={handleButtonClickCreate}>
                 Create Account

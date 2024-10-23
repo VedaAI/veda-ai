@@ -32,6 +32,8 @@ body {
   margin: 0;
 }
 
+
+
 a {
   color: inherit;
   text-decoration: none;
@@ -56,4 +58,9 @@ a {
   grid-template-rows: 10% 90% ;
   height: 100vh;
   
+}
+
+
+::-webkit-scrollbar {
+  display: none;
 }
