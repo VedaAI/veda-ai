@@ -1,31 +1,3 @@
-import Nav from "../nav/page22";
-import Hnav from "../nav/page1";
-import styleAbout from "../css/about.module.css"
-
-
-export default function About(){
-
-    return( 
-        <div className={styleAbout.all}>
-        <Nav />
-        <div className={styleAbout.right}>
-            
-            <div className= {styleAbout.Hnav}>
-                <Hnav />
-            </div>
-
-            <div className={styleAbout.about} >
-
-            </div>
-
-
-
-        </div>
-        
-
-
-
-        </div>
-
-)
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a13a988a6c28e52ab2c927fa634e931326cb42b99b7842a958faca9b18de96f1
+size 486

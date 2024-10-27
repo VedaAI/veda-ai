@@ -1,23 +1,3 @@
-
-export const storeData = (key, value) => {
-    if (typeof window !== 'undefined') {
-  
-        localStorage.setItem(key, JSON.stringify(value));
-        
-      }
-    };
-    
-    export const getData = (key) => {
-      if (typeof window !== 'undefined') {
-        const storedData = localStorage.getItem(key);
-        return storedData ? JSON.parse(storedData) : "Data not stored";
-      }
-      return "Error";
-    };
-    
-    export const removeData = (key) => {
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem(key);
-      }
-    };
-    
+version https://git-lfs.github.com/spec/v1
+oid sha256:36d46f4b046954deeeab15e1ba9042db759c3213189f9043f4d8dc318c187659
+size 565

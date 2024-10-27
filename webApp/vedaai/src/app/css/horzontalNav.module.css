@@ -1,20 +1,3 @@
-
-.flex{
-    display: flex;
-    text-align: center;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    height: 1rem;
-    background:none;
-    padding: 2rem;
-
-}
-
-.flex > a {
-    padding-right: 1rem;
-    color: #274029;
-    font-size: large ;
-    /* text-shadow: 1px 0 #9EA93F; */
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd8a9256db66b42e9c77385d5133dacb9f52dc993493cbe54f08911a88a774fe
+size 306
