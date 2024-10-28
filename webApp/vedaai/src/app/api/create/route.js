@@ -11,11 +11,31 @@ async function getUsername() {
   return userName;
 }
 
+async function hashUsername( username , password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(username);
+  
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  const newPassword = hashHex + password ;
+  console.log("new password " + newPassword + "oooooooooooooooooo " + hashHex + "dvdavdsvsd" + password);
+  
+  return newPassword;
+}
+
+
 // Function to insert data into PostgreSQL
 async function setData(username, name, email, password) {
+
+  const passwordEncoded = await hashUsername(username , password );
+
+  console.log(passwordEncoded);
+
   await pool.query(
     "INSERT INTO userData (uid, uname, email, password) VALUES ($1, $2, $3, $4)",
-    [username, name, email, password]
+    [username, name, email, passwordEncoded]
   );
 }
 

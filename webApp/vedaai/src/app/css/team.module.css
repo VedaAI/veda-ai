@@ -1,0 +1,51 @@
+
+
+
+.teamH1{
+    font-size: xxx-large;
+    color: green;
+    margin-left: 1rem;
+}
+
+
+.teamH2{
+    font-size: xx-large;
+    color: yellowgreen;
+    margin-left: 1rem;
+}
+
+
+.teamP{
+    color: black;
+    margin-left: 1rem;
+}
+
+.teamCards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.teamMember{
+    margin: 1rem;
+
+}
+
+.teamMemberPhoto{
+    height: 20rem;
+    width: 15rem;
+    object-fit: cover;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+
+}
+
+.teamMemberDetails{
+    text-align: left;
+    color: black;
+}
+
+.teamMemberDetailsP{
+    color: gray;
+}

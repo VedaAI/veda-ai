@@ -1,9 +1,30 @@
 import pool from "../../../../utlis/pgdb";
 
+
+async function hashUsername( username , password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(username);
+  
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  const newPassword = hashHex +password ;
+  
+  return newPassword;
+}
+
 async function getData(username, password) {
-  const { rows } = await pool.query("SELECT * FROM userData WHERE UID = $1 and password = $2",[username,password]);
+
+
+
+
+  const passwordEncoded = await hashUsername(username , password );
+
+
+  const { rows } = await pool.query("SELECT * FROM userData WHERE UID = $1 and password = $2",[username,passwordEncoded]);
   
-  
+    
   return rows;
 }
 

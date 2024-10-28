@@ -2,6 +2,8 @@ import Nav from "../nav/page22";
 import Hnav from "../nav/page1";
 import styleAbout from "../css/about.module.css"
 
+import Team from "../team/page";
+
 
 export default function About(){
 
@@ -15,6 +17,7 @@ export default function About(){
             </div>
 
             <div className={styleAbout.about} >
+                <Team />
 
             </div>
 
