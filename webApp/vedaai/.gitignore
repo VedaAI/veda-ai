@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-./index_vector_store/*
+~/index_vector_store/*
 *.zip
