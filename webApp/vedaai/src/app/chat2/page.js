@@ -13,11 +13,13 @@ const Chat2 = () => {
   const chatBoxRef = useRef(null);
 
   // Load responses from a JSON file
-  useEffect(() => {
-    fetch('/assets/json/responses.json')
-      .then((res) => res.json())
-      .then((data) => setResponses(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('/assets/json/responses.json')
+  //     .then((res) => res.json())
+  //     .then((data) => setResponses(data));
+  // }, []);
+
+
 
   // Scroll to the bottom when messages update
   useEffect(() => {
@@ -27,25 +29,97 @@ const Chat2 = () => {
   }, [messages]);
 
   // Handle user message submission
-  const handleSendMessage = () => {
-    if (input.trim()) {
-      // Add user message
-      setMessages((prevMessages) => [...prevMessages, { type: 'user', text: input }]);
-      setInput('');
+  // const handleSendMessage = async () => {
+  //   if (input.trim()) {
+  //     // Add user message
+  //     setMessages((prevMessages) => [...prevMessages, { type: 'user', text: input }]);
+  //     const userMessage = input;
+  //     setInput(''); // Clear input field
+  //     setInput('');
 
-      // Load response after user's message
-      if (responseIndex < responses.length) {
-        setTimeout(() => {
-          // Add the bot's response after a delay
+  //     // Load response after user's message
+  //     // if (responseIndex < responses.length) {
+  //     //   setTimeout(() => {
+  //     //     // Add the bot's response after a delay
+  //     //     setMessages((prevMessages) => [
+  //     //       ...prevMessages,
+  //     //       { type: 'response', text: responses[responseIndex] }
+  //     //     ]);
+  //     //     setResponseIndex((prevIndex) => prevIndex + 1); // Increment the response index
+  //     //   }, 1000); // Simulate response delay
+  //     // }
+
+
+  //     try {
+  //       // Send the user message to the API and get the response
+  //       const response = await fetch('http://127.0.0.1:5000/chat', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({ user_query: userMessage ,agent_ans : ""}),
+  //       });
+
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         const botResponse = data.response; // Assuming your API returns { "response": "..." }
+
+  //         // Add the bot's response to the chat
+  //         setMessages((prevMessages) => [
+  //           ...prevMessages,
+  //           { type: 'response', text: botResponse }
+  //         ]);
+  //       } else {
+  //         console.error("Failed to fetch bot response.");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching bot response:", error);
+  //     }
+  //   }
+  // };
+
+  const handleSendMessage = async () => {
+    if (input.trim()) {
+      // Add the user's message to the chat
+      setMessages((prevMessages) => [...prevMessages, { type: 'user', text: input }]);
+      const userMessage = input;
+      setInput(''); // Clear input field
+  
+      try {
+        // Log that the API call is being made
+        console.log("Sending message to API:", userMessage);
+  
+        // Send both parameters to the API
+        const response = await fetch('http://127.0.0.1:5000/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user_query: userMessage, agent_ans: "" }), // Ensure both params are sent
+        });
+  
+        // Check if the response is successful
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Received response from API:", data);
+  
+          // Extract the bot response from the API response
+          const botResponse = data.message  ; // Assuming API returns { "response": "..." }
+  
+          // Add the bot's response to the chat
           setMessages((prevMessages) => [
             ...prevMessages,
-            { type: 'response', text: responses[responseIndex] }
+            { type: 'response', text: botResponse }
           ]);
-          setResponseIndex((prevIndex) => prevIndex + 1); // Increment the response index
-        }, 1000); // Simulate response delay
+        } else {
+          console.error("Failed to fetch bot response. Status:", response.status);
+        }
+      } catch (error) {
+        console.error("Error fetching bot response:", error);
       }
     }
   };
+  
 
   return (
     <div className={styleChatt.chatContainer}>
