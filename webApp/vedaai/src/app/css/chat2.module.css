@@ -84,3 +84,19 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+
+  .loadingMessage{
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    color: black;
+    text-align: left;
+    max-width: 60%;
+    word-wrap: break-word;  /* Break long words */
+    overflow-wrap: break-word; /* For handling word breaks */
+
+  }

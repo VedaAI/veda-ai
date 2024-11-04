@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h4 {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .code-block {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .note {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>API Documentation for Chatbot Integration</h1>
+
+    <h2>Overview</h2>
+    <p>This API allows users to submit queries related to medical advice. The system provides responses based on user inputs, aiming to suggest possible treatments or recommendations.</p>
+
+    <h2>Endpoint</h2>
+    <h4>
+        URL: <span class="code-block" id="base_url"></span>
+        <span class="note"></span>
+    </h4>
+
+    <h2>HTTP Method</h2>
+    <h4>POST</h4>
+
+    <h2>Headers</h2>
+    <h4>
+        Content-Type: <span class="code-block">application/json</span>
+    </h4>
+
+    <h2>Request Body</h2>
+    <p>The request body should be in JSON format and contain the following fields:</p>
+    <div class="code-block">
+        <pre>
+| Parameter    | Type   | Required | Description                                                          |
+|--------------|--------|----------|----------------------------------------------------------------------|
+| user_query   | String | Yes      | The user's question or statement. Example: "I have a cold since 3 weeks what medicine should I take." |
+| agent_ans    | String | No       | An optional field for agent responses (if available). Leave empty if the query is initial. |
+        </pre>
+    </div>
+
+    <h4>Example Request Body:</h4>
+    <div class="code-block">
+        <pre>
+{
+    "user_query": "I have a cold since 3 weeks what medicine should I take",
+    "agent_ans": ""
+}
+        </pre>
+    </div>
+
+    <h2>Response</h2>
+    <p>The response will contain the following information in JSON format:</p>
+    <div class="code-block">
+        <pre>
+| Field      | Type   | Description                                               |
+|------------|--------|-----------------------------------------------------------|
+| answer     | String | The chatbot's response based on the user's query.        |
+| status     | String | Indicates whether the request was successful or failed.   |
+        </pre>
+    </div>
+
+    <h4>Example Response:</h4>
+    <div class="code-block">
+        <pre>
+{
+    "answer": "You should consult a doctor for a proper diagnosis.",
+    "status": "success"
+}
+        </pre>
+    </div>
+
+    <h2>API URL</h2>
+    <h4 id="URL"></h4>
+
+    <script>
+        document.getElementById("URL").innerHTML =
+        "API URL: " + window.location.href;
+
+        document.getElementById("base_url").innerHTML = " " + window.location.href +"/chat";
+    </script>
 </body>
 </html>

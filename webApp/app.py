@@ -1,5 +1,8 @@
 from flask import Flask , render_template, request, jsonify
 from flask_cors import CORS
+
+import time
+
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
@@ -38,7 +41,20 @@ def chat():
         req_from_client = request.get_json()
         user_query      = req_from_client["user_query"]
         agent_ans       = req_from_client["agent_ans"] 
+
+
+        user_query_lower = user_query.lower()
+         # Check if the message is a greeting
+        if user_query_lower in ["hello", "hi", "yo"]:
+            time.sleep(4)
+            default_message = "Hello! How can I assist you today?"
+            return jsonify({"received_data": [{"user_query": user_query, "agent_ans": agent_ans}], "message": default_message})
+
         
+        # Simulate loading message response
+        loading_message = {"received_data": [{"user_query": user_query, "agent_ans": agent_ans}], "message": "Generating response, please wait..."}
+        
+        # Return the loading message immediately
         
         def prompt_template(context, question):
             return f"You are an assistant for question-answering tasks, you must act like a medical chat bot who is giving initial diagnosis(tell the patient in brief about what they maybe facing and give calming answers) using the contexts which are the conversation of a doctor and a patient. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.\nQuestion: {question} \nContext: {context} \nAnswer:"

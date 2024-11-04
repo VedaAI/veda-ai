@@ -8,6 +8,7 @@ const Chat2 = () => {
   const [input, setInput] = useState('');
   const [responses, setResponses] = useState([]);
   const [responseIndex, setResponseIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Create a ref to the chat box for scrolling
   const chatBoxRef = useRef(null);
@@ -84,6 +85,8 @@ const Chat2 = () => {
       setMessages((prevMessages) => [...prevMessages, { type: 'user', text: input }]);
       const userMessage = input;
       setInput(''); // Clear input field
+       // Set loading to true to show loading message
+       setIsLoading(true);
   
       try {
         // Log that the API call is being made
@@ -116,6 +119,9 @@ const Chat2 = () => {
         }
       } catch (error) {
         console.error("Error fetching bot response:", error);
+      } finally {
+        // Set loading to false to hide loading message
+        setIsLoading(false);
       }
     }
   };
@@ -137,6 +143,15 @@ const Chat2 = () => {
        </div>
        
         ))}
+
+        {/* Show loading message if isLoading is true */}
+        {isLoading && (
+          <div className={styleChatt.loadingMessage}>
+            Generating response, please wait...
+          </div>
+        )}
+        
+
       </div>
       <div className={styleChatt.inputBox}>
         <input
