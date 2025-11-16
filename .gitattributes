@@ -19,3 +19,4 @@
 *.woff filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.sqlite3 filter=lfs diff=lfs merge=lfs -text
+/data/archive/MedicalReviews_280000.csv filter=lfs diff=lfs merge=lfs -text
